@@ -19,9 +19,7 @@
       --text-muted: #8c8e98;
       --text-disabled: #646670;
     }
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: var(--background);
@@ -31,7 +29,6 @@
       flex-direction: column;
       -webkit-font-smoothing: antialiased;
     }
-
     /* Header */
     header {
       position: sticky;
@@ -42,7 +39,6 @@
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
     }
-
     .header-inner {
       max-width: 1600px;
       margin: 0 auto;
@@ -53,11 +49,9 @@
       padding: 0 24px;
       gap: 16px;
     }
-
     @media (max-width: 640px) {
       .header-inner { padding: 0 16px; }
     }
-
     .logo {
       display: flex;
       align-items: center;
@@ -65,7 +59,6 @@
       text-decoration: none;
       color: inherit;
     }
-
     .logo-icon {
       width: 36px;
       height: 36px;
@@ -79,23 +72,18 @@
       box-shadow: 0 0 20px -8px var(--primary);
       flex-shrink: 0;
     }
-
     .logo-icon svg { width: 17px; height: 17px; }
-
     .logo-text {
       display: flex;
       flex-direction: column;
       line-height: 1;
     }
-
     .logo-text .brand {
       font-size: 17px;
       font-weight: 700;
       letter-spacing: -0.3px;
     }
-
     .logo-text .brand .rp { color: var(--primary); }
-
     .logo-text .sub {
       margin-top: 3px;
       font-size: 8.5px;
@@ -105,7 +93,6 @@
       color: var(--text-disabled);
       line-height: 8.5px;
     }
-
     .login-btn {
       display: inline-flex;
       align-items: center;
@@ -121,24 +108,19 @@
       transition: all 0.15s ease;
       white-space: nowrap;
     }
-
     .login-btn:hover {
       border-color: rgba(252, 124, 32, 0.45);
       background: rgba(252, 124, 32, 0.14);
       box-shadow: 0 0 20px -6px var(--primary);
     }
-
     .login-btn svg {
       width: 14px;
       height: 14px;
       transition: transform 0.15s ease;
     }
-
     .login-btn:hover svg { transform: translateX(2px); }
-
     /* Main */
     main { flex: 1; }
-
     .container {
       max-width: 720px;
       margin: 0 auto;
@@ -147,11 +129,9 @@
       flex-direction: column;
       gap: 16px;
     }
-
     @media (max-width: 640px) {
       .container { padding: 40px 16px; }
     }
-
     /* Status card */
     .status-card {
       position: relative;
@@ -163,7 +143,6 @@
         0 1px 0 0 rgba(255, 255, 255, 0.05) inset,
         0 24px 48px -28px rgba(0, 0, 0, 0.85);
     }
-
     .status-card::before {
       content: '';
       position: absolute;
@@ -171,7 +150,6 @@
       background: radial-gradient(110% 90% at 50% 0%, rgba(126, 217, 87, 0.16), transparent 65%);
       pointer-events: none;
     }
-
     .status-inner {
       position: relative;
       display: flex;
@@ -181,7 +159,6 @@
       padding: 36px 20px;
       text-align: center;
     }
-
     .status-icon {
       width: 64px;
       height: 64px;
@@ -193,23 +170,19 @@
       align-items: center;
       justify-content: center;
     }
-
     .status-icon svg { width: 32px; height: 32px; }
-
     .status-title {
       font-size: 24px;
       font-weight: 700;
       color: var(--status-success);
       line-height: 30px;
     }
-
     .status-desc {
       max-width: 420px;
       font-size: 14px;
       color: var(--text-muted);
       line-height: 1.5;
     }
-
     .status-hash {
       display: inline-flex;
       align-items: center;
@@ -226,9 +199,7 @@
       transition: color 0.15s ease;
       outline: none;
     }
-
     .status-hash:hover { color: var(--primary); }
-
     .status-hash svg {
       width: 12px;
       height: 12px;
@@ -236,20 +207,16 @@
       transition: opacity 0.15s ease;
       flex-shrink: 0;
     }
-
     .status-hash:hover svg { opacity: 1; }
-
     /* Grid */
     .grid-row {
       display: grid;
       gap: 16px;
       grid-template-columns: 1fr 260px;
     }
-
     @media (max-width: 640px) {
       .grid-row { grid-template-columns: 1fr; }
     }
-
     .card {
       border-radius: 16px;
       border: 1px solid var(--border);
@@ -259,28 +226,23 @@
         0 24px 48px -28px rgba(0, 0, 0, 0.85);
       transition: border-color 0.2s ease;
     }
-
     .card:hover { border-color: rgba(255, 255, 255, 0.12); }
-
-    /* Left info card — exact from source: p-5 = 20px, gap-4 = 16px */
+    /* Left info card */
     .info-card {
       padding: 20px;
       display: flex;
       flex-direction: column;
       gap: 16px;
     }
-
     .info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 10px;
     }
-
     @media (max-width: 480px) {
       .info-grid { grid-template-columns: 1fr; }
     }
-
-    /* Info boxes — px-3.5 py-3 = 12px 14px, rounded-xl = 12px */
+    /* Info boxes — exact sizes */
     .info-box {
       display: flex;
       flex-direction: column;
@@ -290,8 +252,7 @@
       border: 1px solid var(--border);
       background: rgba(255, 255, 255, 0.02);
     }
-
-    /* Labels — text-[11px] uppercase tracking-[0.06em] text-text-disabled */
+    /* Labels */
     .info-label {
       display: flex;
       align-items: center;
@@ -303,14 +264,12 @@
       color: var(--text-disabled);
       line-height: 16.5px;
     }
-
     .info-label svg {
       width: 12px;
       height: 12px;
       flex-shrink: 0;
     }
-
-    /* Values — text-sm font-medium */
+    /* Values */
     .info-value {
       font-size: 14px;
       font-weight: 500;
@@ -319,7 +278,6 @@
       overflow-wrap: anywhere;
       line-height: 20px;
     }
-
     .reason-box {
       display: flex;
       flex-direction: column;
@@ -329,33 +287,27 @@
       border: 1px solid var(--border);
       background: rgba(255, 255, 255, 0.02);
     }
-
     .reason-box .info-value {
       font-weight: 400;
       color: var(--text-muted);
       line-height: 1.5;
     }
-
     /* Timeline */
     .timeline-card { padding: 20px; }
-
     .timeline-list {
       list-style: none;
       display: flex;
       flex-direction: column;
     }
-
     .timeline-item {
       display: flex;
       gap: 12px;
     }
-
     .timeline-line {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
-
     .timeline-dot {
       width: 32px;
       height: 32px;
@@ -365,21 +317,17 @@
       justify-content: center;
       flex-shrink: 0;
     }
-
     .timeline-dot.orange {
       border: 1px solid rgba(252, 124, 32, 0.3);
       background: rgba(252, 124, 32, 0.1);
       color: var(--primary);
     }
-
     .timeline-dot.green {
       border: 1px solid rgba(126, 217, 87, 0.25);
       background: rgba(126, 217, 87, 0.1);
       color: var(--status-success);
     }
-
     .timeline-dot svg { width: 16px; height: 16px; }
-
     .timeline-connector {
       width: 1px;
       flex: 1;
@@ -387,7 +335,6 @@
       margin-top: 4px;
       min-height: 20px;
     }
-
     .timeline-content {
       display: flex;
       flex-direction: column;
@@ -395,43 +342,35 @@
       padding-bottom: 20px;
       padding-top: 4px;
     }
-
     .timeline-item:last-child .timeline-content { padding-bottom: 0; }
     .timeline-item:last-child .timeline-connector { display: none; }
-
     .timeline-title {
       font-size: 14px;
       font-weight: 500;
       color: var(--foreground);
     }
-
     .timeline-date {
       font-size: 12px;
       color: var(--text-muted);
     }
-
     /* Next */
     .next-card { padding: 20px; }
-
     .next-title {
       font-size: 14px;
       font-weight: 600;
       color: var(--foreground);
       margin-bottom: 6px;
     }
-
     .next-text {
       font-size: 14px;
       line-height: 1.6;
       color: var(--text-muted);
     }
-
-    /* Footer — exact from source */
+    /* Footer */
     footer {
       margin-top: auto;
       border-top: 1px solid var(--border-footer);
     }
-
     .footer-inner {
       max-width: 1600px;
       margin: 0 auto;
@@ -441,7 +380,6 @@
       gap: 12px;
       padding: 20px 16px;
     }
-
     @media (min-width: 640px) {
       .footer-inner {
         flex-direction: row;
@@ -449,12 +387,10 @@
         padding: 20px 24px;
       }
     }
-
     .footer-copy {
       font-size: 12px;
       color: var(--text-disabled);
     }
-
     .footer-nav {
       display: flex;
       flex-wrap: wrap;
@@ -462,16 +398,13 @@
       justify-content: center;
       gap: 0 8px;
     }
-
     .footer-nav a {
       font-size: 12px;
       color: var(--text-muted);
       text-decoration: none;
       transition: color 0.15s ease;
     }
-
     .footer-nav a:hover { color: var(--primary); }
-
     .footer-nav .sep {
       color: rgba(100, 102, 112, 0.5);
       font-size: 12px;
@@ -503,7 +436,6 @@
       </a>
     </div>
   </header>
-
   <main>
     <div class="container">
       <div class="status-card">
@@ -527,7 +459,6 @@
           </button>
         </div>
       </div>
-
       <div class="grid-row">
         <div class="card info-card">
           <div class="info-grid">
@@ -541,7 +472,7 @@
                 </svg>
                 Сервер
               </span>
-              <span class="info-value">Milton</span>
+              <span class="info-value">Chiliad</span>
             </div>
             <div class="info-box">
               <span class="info-label">
@@ -554,7 +485,7 @@
                 </svg>
                 Игровой логин
               </span>
-              <span class="info-value">Maksim_Prefov</span>
+              <span class="info-value">triggeraa</span>
             </div>
             <div class="info-box">
               <span class="info-label">
@@ -567,7 +498,7 @@
                 </svg>
                 Social Club
               </span>
-              <span class="info-value">97preff</span>
+              <span class="info-value">winzlyy</span>
             </div>
             <div class="info-box">
               <span class="info-label">
@@ -577,7 +508,7 @@
                 </svg>
                 Discord
               </span>
-              <span class="info-value">npoblemu</span>
+              <span class="info-value">3cpc</span>
             </div>
           </div>
           <div class="reason-box">
@@ -593,7 +524,6 @@
             <p class="info-value">3.15, но скорректировали на 1.7</p>
           </div>
         </div>
-
         <div class="card timeline-card">
           <ol class="timeline-list">
             <li class="timeline-item">
@@ -628,7 +558,6 @@
           </ol>
         </div>
       </div>
-
       <div class="card next-card">
         <div class="next-title">Что дальше</div>
         <p class="next-text">
@@ -637,7 +566,6 @@
       </div>
     </div>
   </main>
-
   <footer>
     <div class="footer-inner">
       <p class="footer-copy">© 2019 — 2026 GTA5RP.</p>
