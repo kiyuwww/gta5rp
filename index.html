@@ -12,16 +12,12 @@
       --background: #08090c;
       --foreground: #f5f6fa;
       --card: #0e1014;
-      --card-foreground: #f5f6fa;
       --primary: #fc7c20;
-      --primary-foreground: #281400;
       --border: rgba(255, 255, 255, 0.08);
-      --muted: #14161c;
-      --muted-foreground: #b4b6be;
-      --accent: #1a1c22;
+      --border-footer: rgba(255, 255, 255, 0.047);
       --status-success: #7ed957;
-      --text-muted: #b4b6be;
-      --text-disabled: #71717a;
+      --text-muted: #8c8e98;
+      --text-disabled: #646670;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -34,10 +30,9 @@
       display: flex;
       flex-direction: column;
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
 
-    /* ===== Header ===== */
+    /* Header */
     header {
       position: sticky;
       top: 0;
@@ -97,7 +92,6 @@
       font-size: 17px;
       font-weight: 700;
       letter-spacing: -0.3px;
-      color: var(--foreground);
     }
 
     .logo-text .brand .rp { color: var(--primary); }
@@ -109,6 +103,7 @@
       text-transform: uppercase;
       letter-spacing: 1.6px;
       color: var(--text-disabled);
+      line-height: 8.5px;
     }
 
     .login-btn {
@@ -141,10 +136,8 @@
 
     .login-btn:hover svg { transform: translateX(2px); }
 
-    /* ===== Main ===== */
-    main {
-      flex: 1;
-    }
+    /* Main */
+    main { flex: 1; }
 
     .container {
       max-width: 720px;
@@ -246,7 +239,7 @@
 
     .status-hash:hover svg { opacity: 1; }
 
-    /* Grid: info + timeline */
+    /* Grid */
     .grid-row {
       display: grid;
       gap: 16px;
@@ -269,20 +262,25 @@
 
     .card:hover { border-color: rgba(255, 255, 255, 0.12); }
 
-    /* Left info card */
-    .info-card { padding: 20px; }
+    /* Left info card — exact from source: p-5 = 20px, gap-4 = 16px */
+    .info-card {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
 
     .info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 10px;
-      margin-bottom: 10px;
     }
 
     @media (max-width: 480px) {
       .info-grid { grid-template-columns: 1fr; }
     }
 
+    /* Info boxes — px-3.5 py-3 = 12px 14px, rounded-xl = 12px */
     .info-box {
       display: flex;
       flex-direction: column;
@@ -293,14 +291,17 @@
       background: rgba(255, 255, 255, 0.02);
     }
 
+    /* Labels — text-[11px] uppercase tracking-[0.06em] text-text-disabled */
     .info-label {
       display: flex;
       align-items: center;
       gap: 6px;
       font-size: 11px;
+      font-weight: 400;
       text-transform: uppercase;
       letter-spacing: 0.06em;
       color: var(--text-disabled);
+      line-height: 16.5px;
     }
 
     .info-label svg {
@@ -309,12 +310,14 @@
       flex-shrink: 0;
     }
 
+    /* Values — text-sm font-medium */
     .info-value {
       font-size: 14px;
       font-weight: 500;
       color: var(--foreground);
       word-break: break-word;
       overflow-wrap: anywhere;
+      line-height: 20px;
     }
 
     .reason-box {
@@ -331,10 +334,9 @@
       font-weight: 400;
       color: var(--text-muted);
       line-height: 1.5;
-      font-size: 14px;
     }
 
-    /* Timeline card */
+    /* Timeline */
     .timeline-card { padding: 20px; }
 
     .timeline-list {
@@ -408,7 +410,7 @@
       color: var(--text-muted);
     }
 
-    /* Next steps */
+    /* Next */
     .next-card { padding: 20px; }
 
     .next-title {
@@ -424,40 +426,56 @@
       color: var(--text-muted);
     }
 
-    /* Footer */
+    /* Footer — exact from source */
     footer {
-      border-top: 1px solid var(--border);
-      padding: 16px 24px;
+      margin-top: auto;
+      border-top: 1px solid var(--border-footer);
+    }
+
+    .footer-inner {
+      max-width: 1600px;
+      margin: 0 auto;
       display: flex;
+      flex-direction: column-reverse;
       align-items: center;
-      justify-content: space-between;
+      gap: 12px;
+      padding: 20px 16px;
+    }
+
+    @media (min-width: 640px) {
+      .footer-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px 24px;
+      }
+    }
+
+    .footer-copy {
       font-size: 12px;
       color: var(--text-disabled);
-      flex-wrap: wrap;
-      gap: 12px;
     }
 
-    .footer-links {
+    .footer-nav {
       display: flex;
-      gap: 16px;
       flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0 8px;
     }
 
-    .footer-links a {
-      color: var(--text-disabled);
+    .footer-nav a {
+      font-size: 12px;
+      color: var(--text-muted);
       text-decoration: none;
       transition: color 0.15s ease;
     }
 
-    .footer-links a:hover { color: var(--text-muted); }
+    .footer-nav a:hover { color: var(--primary); }
 
-    @media (max-width: 640px) {
-      footer {
-        flex-direction: column;
-        text-align: center;
-        padding: 16px;
-      }
-      .footer-links { justify-content: center; }
+    .footer-nav .sep {
+      color: rgba(100, 102, 112, 0.5);
+      font-size: 12px;
+      user-select: none;
     }
   </style>
 </head>
@@ -488,7 +506,6 @@
 
   <main>
     <div class="container">
-      <!-- Status -->
       <div class="status-card">
         <div class="status-inner">
           <span class="status-icon">
@@ -511,9 +528,7 @@
         </div>
       </div>
 
-      <!-- Info + Timeline -->
       <div class="grid-row">
-        <!-- Left: info boxes -->
         <div class="card info-card">
           <div class="info-grid">
             <div class="info-box">
@@ -579,7 +594,6 @@
           </div>
         </div>
 
-        <!-- Right: timeline -->
         <div class="card timeline-card">
           <ol class="timeline-list">
             <li class="timeline-item">
@@ -615,7 +629,6 @@
         </div>
       </div>
 
-      <!-- What next -->
       <div class="card next-card">
         <div class="next-title">Что дальше</div>
         <p class="next-text">
@@ -626,12 +639,17 @@
   </main>
 
   <footer>
-    <div>© 2019 — 2026 GTA5RP.</div>
-    <div class="footer-links">
-      <a href="#">Главная</a>
-      <a href="#">Условия использования</a>
-      <a href="#">Политика конфиденциальности</a>
-      <a href="#">Файлы Cookie</a>
+    <div class="footer-inner">
+      <p class="footer-copy">© 2019 — 2026 GTA5RP.</p>
+      <nav class="footer-nav">
+        <a href="/">Главная</a>
+        <span class="sep" aria-hidden="true">·</span>
+        <a href="/terms">Условия использования</a>
+        <span class="sep" aria-hidden="true">·</span>
+        <a href="/privacy">Политика конфиденциальности</a>
+        <span class="sep" aria-hidden="true">·</span>
+        <a href="/cookie">Файлы Cookie</a>
+      </nav>
     </div>
   </footer>
 </body>
